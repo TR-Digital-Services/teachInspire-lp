@@ -1,0 +1,434 @@
+/* TeachInspire Header Animation Styles - OPTIMIZED */
+
+/* Animation container - prevents layout shifts while maintaining baseline alignment */
+.animated-word {
+  position: relative;
+  display: inline;
+  /* Use inline display for perfect baseline alignment */
+  vertical-align: baseline;
+}
+
+/* Word styling - optimized for smooth transitions and perfect baseline alignment */
+.word {
+  /* Use inline display instead of absolute positioning for baseline alignment */
+  display: none; /* Hidden by default */
+  white-space: nowrap;
+  /* Ensure perfect baseline alignment with surrounding text */
+  vertical-align: baseline;
+  line-height: inherit;
+  font-size: inherit;
+  /* Transition handled by JavaScript for precise timing control */
+  transition: none; /* Disable CSS transitions - JS handles timing */
+  transform: translateZ(0); /* Force hardware acceleration */
+  will-change: opacity; /* Optimize for opacity changes */
+}
+
+/* Active word is displayed inline for perfect alignment */
+.word.active {
+  display: inline;
+  opacity: 1;
+}
+
+/* Active state is now handled by display: inline in JavaScript */
+
+/* EXACT color specifications from client brief */
+.word.negative {
+  color: #dc3545; /* Exact red color specified */
+  text-decoration: line-through; /* Strikethrough for negative words */
+}
+
+.word.positive {
+  color: #28a745; /* Exact green color specified */
+  text-decoration: none; /* No decoration for positive words */
+}
+
+/* REMOVED: CSS keyframe animations - replaced with JavaScript-controlled transitions
+ * This provides more precise timing control and smoother transitions
+ * All animation timing is now handled in JavaScript for exact 1.5s intervals
+ */
+
+/* Ensure proper spacing and alignment - optimized */
+.hero-subtitle {
+  line-height: 1.4;
+}
+
+.hero-subtitle p {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments for animation - maintains readability */
+@media (max-width: 768px) {
+  .animated-word {
+    min-width: 120px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-word {
+    min-width: 100px;
+    font-size: 0.85em;
+  }
+
+  .hero-subtitle {
+    line-height: 1.3;
+  }
+}
+
+/* Accessibility: Respect reduced motion preferences - ENHANCED */
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    transition: none !important;
+  }
+
+  /* Show final state immediately for users who prefer reduced motion */
+  .word.final-state {
+    display: inline !important;
+    color: #28a745 !important;
+    text-decoration: none !important;
+  }
+}
+
+/* Ensure smooth text rendering and optimal performance */
+.animated-word,
+.word {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Performance optimizations */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Base text styling - ensures consistent appearance */
+.hero-subtitle {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Animation container performance optimization */
+.animated-word {
+  contain: layout style paint; /* CSS containment for better performance */
+}
+
+/* ========================================
+   HERO TRANSFORMATION ANIMATION - SIMPLIFIED SAND DRAINING
+   ======================================== */
+
+/* Hero image container */
+.hero-image {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Transformation container - holds main image and overlays */
+.transformation-container {
+  position: relative;
+  display: inline-block;
+  max-width: 400px;
+}
+
+/* Main transformation image */
+.transformation-image {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  transition: all 0.4s ease;
+  filter: brightness(1);
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* Very subtle lightbulb glow - precisely positioned on the bulb only */
+.lightbulb-glow-overlay {
+  position: absolute;
+  top: 50%; /* Position exactly on the lightbulb */
+  left: 42%; /* Center precisely on the bulb */
+  width: 16%; /* Just the bulb size */
+  height: 12%; /* Just the bulb height */
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 245, 180, 0.15) 0%,
+    rgba(255, 245, 180, 0.1) 50%,
+    rgba(255, 245, 180, 0.05) 80%,
+    transparent 100%
+  );
+  opacity: 0;
+  z-index: 1; /* Behind the lightbulb */
+  pointer-events: none;
+  transition: all 0.8s ease;
+  border-radius: 50%; /* Circular glow */
+}
+
+/* ========================================
+   SAND DRAINING ANIMATION KEYFRAMES
+   ======================================== */
+
+
+
+/* Lightbulb glow effect - progressive illumination */
+@keyframes lightbulb-glow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Main image subtle enhancement during animation */
+@keyframes image-enhance {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.05) contrast(1.05);
+  }
+  100% {
+    filter: brightness(1.1) contrast(1.1) drop-shadow(0 4px 20px rgba(241, 210, 99, 0.3));
+  }
+}
+
+/* ========================================
+   SEQUENTIAL STORYTELLING ANIMATION STATES
+   ======================================== */
+
+/* Phase 1: Image enhancement (0-2s) */
+.transformation-container.phase-1 .transformation-image {
+  animation: image-enhance 2s ease-in-out forwards;
+}
+
+/* Phase 2: Lightbulb illumination (2-4s) */
+.transformation-container.phase-2 .lightbulb-glow-overlay {
+  animation: lightbulb-glow 2s ease-in-out forwards;
+}
+
+/* Hover effects - subtle enhancements */
+.transformation-container:hover .transformation-image {
+  transform: scale(1.02);
+  filter: brightness(1.05) drop-shadow(0 4px 20px rgba(241, 210, 99, 0.2));
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .transformation-image,
+  .lightbulb-glow-overlay {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .lightbulb-glow-overlay {
+    opacity: 0.2 !important;
+  }
+
+  .transformation-image {
+    filter: brightness(1.05) !important;
+  }
+}
+
+/* Mobile optimizations - Larger sizes for better visibility */
+@media (max-width: 768px) {
+  .transformation-container {
+    max-width: 350px; /* Increased from 300px */
+  }
+
+  .transformation-image {
+    max-width: 350px; /* Increased from 300px */
+  }
+
+  .lightbulb-glow-overlay {
+    animation-duration: 1.5s; /* Faster on mobile */
+  }
+}
+
+/* Small mobile optimizations */
+@media (max-width: 480px) {
+  .transformation-container {
+    max-width: 320px; /* Increased from 250px */
+  }
+
+  .transformation-image {
+    max-width: 320px; /* Increased from 250px */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .transformation-container {
+    max-width: 280px;
+  }
+
+  .transformation-image {
+    max-width: 280px;
+  }
+}
+
+
+
+/* Print styles - static final state */
+@media print {
+  .transformation-container {
+    /* Show final transformation state for print */
+  }
+
+  .layer-hourglass {
+    opacity: 0.3 !important;
+  }
+
+  .layer-lightbulb {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .layer-flow {
+    opacity: 0.6 !important;
+  }
+}
+
+/* Enhanced transformation with floating particles */
+.hero-image {
+  /* Add data attribute for enhanced animation */
+  position: relative;
+  overflow: visible;
+}
+
+/* Floating particles effect - creates small energy dots */
+.hero-image[data-enhanced="true"]::before {
+  /* Override the basic pulse with enhanced particle effect */
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(241, 210, 99, 0.3) 0%,
+    transparent 3%
+  ),
+  radial-gradient(
+    circle at 70% 25%,
+    rgba(241, 210, 99, 0.25) 0%,
+    transparent 2%
+  ),
+  radial-gradient(
+    circle at 45% 35%,
+    rgba(241, 210, 99, 0.2) 0%,
+    transparent 2.5%
+  ),
+  radial-gradient(
+    circle at 55% 45%,
+    rgba(241, 210, 99, 0.3) 0%,
+    transparent 2%
+  ),
+  radial-gradient(
+    circle at 40% 55%,
+    rgba(241, 210, 99, 0.25) 0%,
+    transparent 3%
+  ),
+  radial-gradient(
+    circle at 60% 65%,
+    rgba(241, 210, 99, 0.35) 0%,
+    transparent 2.5%
+  ),
+  radial-gradient(
+    ellipse at center,
+    rgba(241, 210, 99, 0.08) 0%,
+    rgba(241, 210, 99, 0.04) 40%,
+    transparent 70%
+  );
+  animation: particle-flow 5s ease-in-out infinite;
+}
+
+/* Advanced particle flow animation */
+@keyframes particle-flow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.3;
+  }
+  20% {
+    transform: translate(-50%, -48%) scale(0.95);
+    opacity: 0.6;
+  }
+  40% {
+    transform: translate(-50%, -46%) scale(1);
+    opacity: 0.8;
+  }
+  60% {
+    transform: translate(-50%, -48%) scale(1.02);
+    opacity: 0.7;
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(0.98);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -52%) scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+/* Lightbulb illumination effect on page load */
+@keyframes lightbulb-illuminate {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0px rgba(241, 210, 99, 0));
+  }
+  50% {
+    filter: brightness(1.1) drop-shadow(0 0 15px rgba(241, 210, 99, 0.4));
+  }
+  100% {
+    filter: brightness(1) drop-shadow(0 0 8px rgba(241, 210, 99, 0.2));
+  }
+}
+
+/* JavaScript-triggered animation states */
+.hero-image.animate-transformation::before {
+  animation-play-state: running;
+}
+
+.hero-image.animate-transformation::after {
+  animation-play-state: running;
+}
+
+.hero-image.illuminate img {
+  animation: lightbulb-illuminate 3s ease-in-out forwards;
+}
+
+/* Default state - animations paused until triggered */
+.hero-image::before,
+.hero-image::after {
+  animation-play-state: paused;
+}
+
+/* Enhanced hover effect for interactive experience */
+.hero-image.animate-transformation:hover img {
+  filter: brightness(1.15) drop-shadow(0 0 25px rgba(241, 210, 99, 0.5));
+  transition: filter 0.4s ease;
+}
+
+/* Smooth transition for all transformation effects */
+.hero-image {
+  transition: all 0.3s ease;
+}
+
+/* Performance optimization for mobile devices */
+@media (max-width: 768px) {
+  .hero-image[data-enhanced="true"]::before {
+    /* Simplified particle effect for mobile */
+    background: radial-gradient(
+      ellipse at center,
+      rgba(241, 210, 99, 0.1) 0%,
+      rgba(241, 210, 99, 0.05) 40%,
+      transparent 70%
+    );
+  }
+
+  .hero-image::after {
+    /* Reduce energy flow intensity on mobile */
+    opacity: 0.7;
+  }
+}
