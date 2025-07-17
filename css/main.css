@@ -36,7 +36,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: clamp(0.875rem, 1.5vw, 1rem); /* 14px - 16px responsive base */
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -108,13 +108,13 @@ p {
 }
 
 .nav-brand .logo {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Responsive logo size */
   margin-bottom: 0;
   color: var(--text-primary);
 }
 
 .nav-brand .tagline {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem); /* Responsive tagline */
   color: var(--accent);
   margin-bottom: 0;
 }
@@ -137,7 +137,7 @@ p {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.125rem); /* Responsive button text */
   text-align: center;
   transition: all 0.3s ease;
   border: none;
@@ -265,7 +265,7 @@ section {
 .problems-list li {
   padding: 1rem 0;
   border-bottom: 1px solid rgba(133, 162, 163, 0.2);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2.2vw, 1.125rem); /* Responsive list items */
   position: relative;
   padding-left: 2rem;
 }
@@ -654,7 +654,7 @@ section {
 
 .btn-large {
   padding: 1.25rem 2.5rem;
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem); /* Responsive large button */
 }
 
 .alternative-contact {
