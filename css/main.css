@@ -108,6 +108,9 @@ p {
 }
 
 .nav-brand .logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem); /* Responsive logo size */
   margin-bottom: 0;
   color: var(--text-primary);

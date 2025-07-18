@@ -1,9 +1,9 @@
 // ========================================
-// HERO LIGHTBULB ANIMATION SYSTEM
+// HERO LIGHTBULB ANIMATION
 // ========================================
 
 /**
- * Professional lightbulb illumination animation for the hero transformation
+ * Lightbulb illumination animation for the hero transformation
  * Sequential storytelling: Image enhances → Lightbulb glows
  * Total duration: 4 seconds (2s per phase)
  */
