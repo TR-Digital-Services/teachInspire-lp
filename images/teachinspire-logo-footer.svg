@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- TEACH text with outline style for dark background -->
+  <text x="150" y="45" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="none" stroke="#ffffff" stroke-width="2" letter-spacing="4px">TEACH</text>
+
+  <!-- inspire text in script style -->
+  <text x="150" y="95" font-family="Georgia, serif" font-size="42" font-weight="400" text-anchor="middle" fill="#f1d263" font-style="italic">inspire</text>
+
+  <!-- Yellow sun/lightbulb element -->
+  <circle cx="220" cy="65" r="8" fill="#f1d263"/>
+  <line x1="220" y1="50" x2="220" y2="55" stroke="#f1d263" stroke-width="2"/>
+  <line x1="235" y1="65" x2="230" y2="65" stroke="#f1d263" stroke-width="2"/>
+  <line x1="220" y1="80" x2="220" y2="75" stroke="#f1d263" stroke-width="2"/>
+  <line x1="205" y1="65" x2="210" y2="65" stroke="#f1d263" stroke-width="2"/>
+  <line x1="230" y1="55" x2="227" y2="58" stroke="#f1d263" stroke-width="2"/>
+  <line x1="230" y1="75" x2="227" y2="72" stroke="#f1d263" stroke-width="2"/>
+  <line x1="210" y1="75" x2="213" y2="72" stroke="#f1d263" stroke-width="2"/>
+  <line x1="210" y1="55" x2="213" y2="58" stroke="#f1d263" stroke-width="2"/>
+
+  <!-- Decorative brush strokes and dots - lighter for dark background -->
+  <circle cx="30" cy="70" r="3" fill="#ffffff" opacity="0.6"/>
+  <circle cx="45" cy="85" r="2" fill="#f1d263" opacity="0.7"/>
+  <circle cx="260" cy="90" r="2.5" fill="#ffffff" opacity="0.5"/>
+  <circle cx="275" cy="75" r="2" fill="#f1d263" opacity="0.6"/>
+
+  <!-- Brush stroke under inspire -->
+  <path d="M 80 110 Q 150 115 220 105" stroke="#f1d263" stroke-width="3" fill="none" opacity="0.6"/>
+</svg>

@@ -35,8 +35,16 @@
     <nav class="navbar" role="navigation" aria-label="Navigation principale">
         <div class="container">
         <div class="nav-brand">
-            <div class="logo">TeachInspire</div>
-            <p class="tagline">Formation IA pour Instituts de Langues</p>
+            <div class="nav-logo-container">
+                <picture>
+                    <source srcset="images/Teachinspire-logo-beige_trans.webp" type="image/webp">
+                    <img src="images/Teachinspire-logo-beige_trans.png" alt="TeachInspire Logo" class="nav-logo-image">
+                </picture>
+                <div class="nav-logo-content">
+                    <div class="logo">TeachInspire</div>
+                    <p class="tagline">Formation IA pour Instituts de Langues</p>
+                </div>
+            </div>
         </div>
             <div class="nav-contact">
                 <a href="mailto:greg@teachinspire.me?subject=Demande d'information TeachInspire" class="contact-link">
@@ -108,12 +116,15 @@
                              loading="lazy">
                     </picture>
                 </div>
-                <ul class="problems-list">
-                    <li>Préparation de cours personnalisés très chronophage</li>
-                    <li>Difficulté à adapter les contenus aux différents niveaux</li>
-                    <li>Ressources multimédia coûteuses à produire</li>
-                    <li>Manque de cohérence pédagogique entre formateurs</li>
-                </ul>
+                <div class="problems-list-container">
+                    <h3 class="problems-subtitle">Les défis que vous rencontrez quotidiennement :</h3>
+                    <ul class="problems-list" role="list">
+                        <li>Préparation de cours personnalisés très chronophage</li>
+                        <li>Difficulté à adapter les contenus aux différents niveaux</li>
+                        <li>Ressources multimédia coûteuses à produire</li>
+                        <li>Manque de cohérence pédagogique entre formateurs</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -159,47 +170,47 @@
     <section class="training-program" id="training-program">
         <div class="container">
             <h2 class="section-title">Programme de Formation Détaillé</h2>
-            <div class="training-modules">
-                <!-- Module 1 -->
-                <div class="module">
-                    <h3 class="module-title">Module 1 — Fondations IA & Outils Essentiels</h3>
-                    <ul class="module-content">
-                        <li>Découverte de Google AI Studio et des LLM</li>
-                        <li>Prise en main des outils de transcription</li>
-                        <li>Introduction à la synthèse vocale</li>
-                        <li>Configuration de votre environnement de travail</li>
-                    </ul>
-                </div>
-                
-                <!-- Module 2 -->
-                <div class="module">
-                    <h3 class="module-title">Module 2 — Prompt Engineering & Communication IA</h3>
-                    <ul class="module-content">
-                        <li>Principes fondamentaux du "prompting"</li>
-                        <li>Création de prompts structurés et réutilisables</li>
-                        <li>Construction de votre banque de prompts personnalisés</li>
-                        <li>Techniques avancées d'auto-évaluation par l'IA</li>
-                    </ul>
-                </div>
-                
-                <!-- Module 3 -->
-                <div class="module">
-                    <h3 class="module-title">Module 3 — Workflows Pédagogiques Complets</h3>
-                    <ul class="module-content">
-                        <li>Transformation de contenus authentiques</li>
-                        <li>Création d'activités engageantes et d'évaluations</li>
-                        <li>Workflows complets: de l'idée au cours finalisé</li>
-                        <li>Intégration dans vos processus existants</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="training-image">
-                <picture>
-                    <source srcset="images/sections/course-dashboard.webp" type="image/webp">
-                    <img src="images/sections/course-dashboard.png"
-                         alt="Capture d'écran du tableau de bord de cours montrant l'interface utilisateur"
+            <p class="section-subtitle">Un parcours progressif en 3 modules pour maîtriser l'IA pédagogique</p>
+            <div class="training-content">
+                <div class="training-image">
+                    <img src="images/sections/training-dashboard-enhanced.svg"
+                         alt="Interface moderne du tableau de bord TeachInspire montrant les modules de formation, le créateur de prompts IA et le suivi de progression"
                          loading="lazy">
-                </picture>
+                </div>
+                <div class="training-modules">
+                    <!-- Module 1 -->
+                    <div class="module">
+                        <h3 class="module-title">Module 1 — Fondations IA & Outils Essentiels</h3>
+                        <ul class="module-content">
+                            <li>Découverte de Google AI Studio et des LLM</li>
+                            <li>Prise en main des outils de transcription</li>
+                            <li>Introduction à la synthèse vocale</li>
+                            <li>Configuration de votre environnement de travail</li>
+                        </ul>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="module">
+                        <h3 class="module-title">Module 2 — Prompt Engineering & Communication IA</h3>
+                        <ul class="module-content">
+                            <li>Principes fondamentaux du "prompting"</li>
+                            <li>Création de prompts structurés et réutilisables</li>
+                            <li>Construction de votre banque de prompts personnalisés</li>
+                            <li>Techniques avancées d'auto-évaluation par l'IA</li>
+                        </ul>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="module">
+                        <h3 class="module-title">Module 3 — Workflows Pédagogiques Complets</h3>
+                        <ul class="module-content">
+                            <li>Transformation de contenus authentiques</li>
+                            <li>Création d'activités engageantes et d'évaluations</li>
+                            <li>Workflows complets: de l'idée au cours finalisé</li>
+                            <li>Intégration dans vos processus existants</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -375,7 +386,7 @@
                 </div>
                 <div class="approach">
                     <h3>Notre Approche</h3>
-                    <p class="approach-quote">"L'IA comme assistant, pas comme remplaçant"</p>
+                    <p>"L'IA comme assistant, pas comme remplaçant"</p>
                 </div>
                 <div class="founder">
                     <h3>Notre Fondateur</h3>
@@ -390,7 +401,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>TeachInspire</h3>
+                    <div class="footer-logo-container">
+                        <picture>
+                            <source srcset="images/Teachinspire-logo-beige_trans.webp" type="image/webp">
+                            <img src="images/Teachinspire-logo-beige_trans.png" alt="TeachInspire Logo" class="footer-logo-image">
+                        </picture>
+                        <div class="footer-logo-text">TeachInspire</div>
+                    </div>
                     <p>Formation IA pour Instituts de Langues</p>
                 </div>
                 <div class="footer-contact">
